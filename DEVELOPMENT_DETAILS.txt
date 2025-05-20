@@ -1,0 +1,36 @@
+Project Implementation Details
+
+1. Backend (Node.js with Apollo Server and MongoDB)
+- backend/server.js: Sets up an Apollo Server with GraphQL schema and resolvers.
+  - Defines GraphQL typeDefs for Post type and Query to fetch posts.
+  - Connects to MongoDB using MongoClient.
+  - Implements resolvers to fetch all posts or a single post by ID from MongoDB.
+  - Starts the server on port 4000.
+- backend/seed.js: (Not detailed here, but typically used to seed initial data into MongoDB.)
+- backend/package.json: Lists dependencies including apollo-server, graphql, and mongodb.
+
+2. Frontend (Next.js with Apollo Client and Tailwind CSS)
+- frontend/pages/_app.js: Configures Apollo Client with the backend GraphQL server URI.
+  - Wraps the app with ApolloProvider to provide GraphQL data to components.
+  - Imports global CSS styles.
+- frontend/pages/index.js: Homepage that fetches and displays a list of blog posts using Apollo Client.
+- frontend/pages/post/[id].js: Dynamic page that fetches and displays details of a single post by ID.
+- frontend/components/Layout.js: Layout component providing consistent page structure and styling using Tailwind CSS.
+- frontend/package.json: Lists dependencies including next, react, react-dom, @apollo/client, graphql, tailwindcss, autoprefixer, and postcss.
+- frontend/tailwind.config.js: Tailwind CSS configuration specifying content paths.
+- frontend/postcss.config.js: Configures PostCSS plugins for Tailwind CSS and autoprefixer.
+- frontend/styles/globals.css: Global CSS styles imported in _app.js.
+
+3. Technologies Used
+- MongoDB: NoSQL database storing blog posts in a collection.
+- Apollo Server: GraphQL server implementation in backend.
+- Apollo Client: GraphQL client in frontend for querying data.
+- GraphQL: Query language defining schema and resolvers for API.
+- Tailwind CSS: Utility-first CSS framework for styling frontend components.
+
+4. Summary
+- The backend provides a GraphQL API to fetch blog posts from MongoDB.
+- The frontend uses Apollo Client to query the backend and display posts.
+- Styling is done using Tailwind CSS for a clean and responsive UI.
+- The project is organized with clear separation of backend and frontend code.
+
